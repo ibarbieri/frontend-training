@@ -18,16 +18,17 @@
     var a = 13;
     function foo(){
       var b = a + 4;
-      assertEqual(b, ???);
+      assertEqual(b, 9);
+      
       function bar(){
         var a = 23;
         function baz(){
           var c = a + b;
           a = 15;
-          assertEqual(c, ???);
+          assertEqual(c, 32);
         }
         baz();
-        assertEqual(a, ???);
+        assertEqual(a, 15);
       }
       bar();
     }
