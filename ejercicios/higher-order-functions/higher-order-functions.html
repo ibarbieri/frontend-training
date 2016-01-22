@@ -19,7 +19,13 @@
     // que recibe un array (de números) y cuente cuantos elementos pares 
     // tiene el array.
     // hint: usar el método 'filter' de arrays
-    function contarPares(arr){}
+    function contarPares (arr) {
+      return arr.filter(esPar).length;
+    }
+
+    function esPar (value) {
+      return value % 2 === 0; 
+    }
 
     assertEqual(contarPares([1,2,3]), 1);
     assertEqual(contarPares([4,6,8]), 3);
@@ -37,6 +43,28 @@
     // una nueva función que aplique las funciones recibidas y retorne su valor booleano
     // hint3: una palabra es capicua cuando es lo mismo leerla de izquierda a derecha o de derecha
     // a izquierda
+
+    function contarPalabrasCapicuaQueContienen (palabras, caracter) {
+      // En aplicar filter cuando invoco a la funct esCapicua o contieneCaracter el primer parametro
+      // es cada uno de los items del array. Esos los pasa la function filter deñ array
+      return palabras.filter(aplicarFilter(esCapicua, contieneCaracter(caracter))).length;
+    }
+
+    function aplicarFilter (fn1, fn2) {
+      return function (elem) {
+        return fn1(elem) && fn2(elem); 
+      }
+    }
+
+    function esCapicua (palabra) {
+      return palabra.split('').reverse().join('') === palabra; 
+    }
+
+    function contieneCaracter (letra) {
+      return function (palabra) {
+        return palabra.indexOf(letra) !== -1;
+      }
+    }
 
     assertEqual(contarPalabrasCapicuaQueContienen(['otto', 'arenera', 'reconocer', 'somos', 'foo'], 'a'), 1);
     assertEqual(contarPalabrasCapicuaQueContienen(['otto', 'arenera', 'reconocer', 'somos', 'foo'], 'w'), 0);
