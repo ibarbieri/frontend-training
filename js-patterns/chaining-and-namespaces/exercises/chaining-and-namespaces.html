@@ -7,30 +7,60 @@
     <link rel="stylesheet" href="chaining-and-namespaces.css">
     <script type="text/javascript" src="chaining-and-namespaces-pre-test.js"></script>
     <script type="text/javascript">
-    /////////////////// PARTE 1 //////////////////
-    // Declarar una variable 'app' de forma tal que si no existe previamente se le 
-    // asigne un objeto nuevo y si existe que no se modifique su valor anterior
+    
+      'use-stric';
 
-    /////////////////// PARTE 2 //////////////////
-    // Agregar a 'app' un método llamado 'status' que reciba por parámetro
-    // un string y lo asigne cómo valor a la propiedad 'status' de 'app'.
-    // El método debe poder ser utilizado con chaining.
+      /////////////////// PARTE 1 //////////////////
+      // Declarar una variable 'app' de forma tal que si no existe previamente se le 
+      // asigne un objeto nuevo y si existe que no se modifique su valor anterior
+      var app = app || {};
 
-    /////////////////// PARTE 3 //////////////////
-    // Agregar a 'app' un método 'extend' que reciba cómo primer parámetro 
-    // un objeto y cómo segundo parámetro una string delimitada por puntos.
-    // La función deberá extender el objeto para lograr anidación de objetos.
-    // Ejemplo: extend(app, 'app.modA.modB.modc') modifica 'app' de la siguiente forma
-    // {
-    //   modA: {
-    //     modB: {
-    //       modC:{}
-    //     }
-    //   }
-    // }
-    // y retorna el objeto correspondiente a la última anidación (modC)
-    // hint: la primera sección hasta el primer punto del segundo parámetro
-    // debe descartarse
+      /////////////////// PARTE 2 //////////////////
+      // Agregar a 'app' un método llamado 'status' que reciba por parámetro
+      // un string y lo asigne cómo valor a la propiedad 'status' de 'app'.
+      // El método debe poder ser utilizado con chaining.
+      app.status = function (str) {
+        var _status = str;
+        return this;
+      };
+
+      /////////////////// PARTE 3 //////////////////
+      // Agregar a 'app' un método 'extend' que reciba cómo primer parámetro 
+      // un objeto y cómo segundo parámetro una string delimitada por puntos.
+      // La función deberá extender el objeto para lograr anidación de objetos.
+      // Ejemplo: extend(app, 'app.modA.modB.modc') modifica 'app' de la siguiente forma
+      // {
+      //   modA: {
+      //     modB: {
+      //       modC:{}
+      //     }
+      //   }
+      // }
+      // y retorna el objeto correspondiente a la última anidación (modC)
+      // hint: la primera sección hasta el primer punto del segundo parámetro
+      // debe descartarse
+      app.extend = function (obj, str) {
+        
+        var modArray = str.split('.');
+        
+        // elimino el primer elemento de modArray
+        modArray.shift();
+
+        // por cada elemento de modArray, seteo un objeto vacio si ese elemento no existe osea es undefined
+        var current = obj;
+
+
+        modArray.forEach(function (modActual) {
+          //modActual es un string 
+          if (!current[modActual]) {
+            current[modActual] = {};
+          }          
+          current = current[modActual];
+        });
+
+        // devuelvo current chain
+        return current;
+      };
 
     </script>
     <script type="text/javascript">
