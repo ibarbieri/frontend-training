@@ -11,15 +11,60 @@
     // Escribir un wrapper "parseJSON" de JSON.parse que reciba un parámetro, 
     // que devuelva una promise y se resuelva o se rejecte según si 
     // el elemento pasado por parámetro es json válido o no
+    function parseJSON (jsonObj) {
+        return new Promise(function (resolve, reject) {
+            try {
+                resolve(JSON.parse(jsonObj));
+            } catch (err) {
+                reject(err);
+            }
+        });
+    }
 
     /////////// Ejercicio 2 //////////////
     // Escribir una función "arePrime" que acepte una promise o array de promises por parámetro
     // y resuelva únicamente si todas las promises recibidas por parámetro se resolvieron
     // y además si el valor con el cual se resolvieron es un número y dicho número es primo
+    // function arePrime(promiseObj) {
+    //     var promiseResult,
+    //         returnValue = false;
 
+    //     if (Array.isArray(promiseObj)) {
+    //         promiseResult = resolvePromises(promiseObj);
+    //         len = promiseResult.length;
+
+            
+    //     } else {
+    //         promiseResult = resolveIndividualPromise(promiseObj);
+    //         // llamamos a la funcion checkForOptimusPrime
+    //     }
+    //     // si es una promise sola usar el fucking resolve
+    // }
+
+    // function resolvePromises(promiseArr) {
+
+    // }
+
+    // function resolveIndividualPromise(promiseObj) {
+
+    // }
+
+    // function checkForOptimusPrime(numberArr) {
+    //     var returnValue = true,
+    //         i = 0,
+    //         len = numberArr.length;
+
+    //     for (; i < len; i+=1) {
+    //         if (es primo, amewo)
+    //             returnValue = false;
+    //         }
+    //     }
+
+    //     return returnValue;
+    // }
     </script>
     <script type="text/javascript" src="promises-post.js"></script>
-    </script>
+
   </head>
   <body>
   </body>
