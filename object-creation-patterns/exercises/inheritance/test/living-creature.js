@@ -1,22 +1,30 @@
 var assert = require("assert");
 
-var LivingCriature = require("../src/living-criature");
+var LivingCreature = require("../src/living-creature");
 
-describe("LivingCriature", function () {
+describe("LivingCreature", function () {
 
     it("must be a function", function () {
 
-        assert(typeof LivingCriature === "function");
+        assert(typeof LivingCreature === "function");
     });
 
+<<<<<<< HEAD:object-creation-patterns/exercises/inheritance/test/living-criature.js
     it("must construct objects with prototypes: LivingCriature.prototype", function () {
+=======
+    it.skip("must construct objects with prototypes: LivingCreature.prototype", function () {
+>>>>>>> upstream/master:object-creation-patterns/exercises/inheritance/test/living-creature.js
 
         var initialOxygen = 0;
 
-        var lc = new LivingCriature(initialOxygen);
+        var lc = new LivingCreature(initialOxygen);
 
         var actual   = Object.getPrototypeOf(lc);
+<<<<<<< HEAD:object-creation-patterns/exercises/inheritance/test/living-criature.js
         var expected = LivingCriature.prototype;
+=======
+        var expected = LivingCreature.prototype;
+>>>>>>> upstream/master:object-creation-patterns/exercises/inheritance/test/living-creature.js
 
         assert(actual === expected);
     });
@@ -27,7 +35,7 @@ describe("LivingCriature", function () {
 
             var initialOxygen = 0;
 
-            var lc = new LivingCriature(initialOxygen);
+            var lc = new LivingCreature(initialOxygen);
         });
     });
 
@@ -37,7 +45,7 @@ describe("LivingCriature", function () {
 
             var initialOxygen = Number.MAX_VALUE;
 
-            var lc = new LivingCriature(initialOxygen);
+            var lc = new LivingCreature(initialOxygen);
         });
     });
 
@@ -47,18 +55,17 @@ describe("LivingCriature", function () {
 
             var initialOxygen = undefined;
 
-            var lc = new LivingCriature(initialOxygen);
+            var lc = new LivingCreature(initialOxygen);
         });
     });
 
     it("must throw an error if the oxygen provided is less than zero", function () {
 
-
         assert.throws(function () {
 
             var initialOxygen = -1;
 
-            var lc = new LivingCriature(initialOxygen);
+            var lc = new LivingCreature(initialOxygen);
         });
     });
 
@@ -70,7 +77,7 @@ describe("LivingCriature", function () {
 
                 var initialOxygen = 10;
 
-                var lc = new LivingCriature(initialOxygen);
+                var lc = new LivingCreature(initialOxygen);
 
                 var actual   = lc.getRemainingOxygen();
                 var expected = initialOxygen;
@@ -85,7 +92,7 @@ describe("LivingCriature", function () {
 
                 var initialOxygen = 0;
 
-                var lc = new LivingCriature(initialOxygen);
+                var lc = new LivingCreature(initialOxygen);
 
                 assert.throws(function () {
 
@@ -97,7 +104,7 @@ describe("LivingCriature", function () {
 
                 var initialOxygen = 10;
 
-                var lc = new LivingCriature(initialOxygen);
+                var lc = new LivingCreature(initialOxygen);
 
                 lc.breath();
 
@@ -114,7 +121,7 @@ describe("LivingCriature", function () {
 
                 var initialOxygen = 0;
 
-                var lc = new LivingCriature(initialOxygen);
+                var lc = new LivingCreature(initialOxygen);
 
                 assert.throws(function () {
 
@@ -126,7 +133,7 @@ describe("LivingCriature", function () {
 
                 var initialOxygen = 10;
 
-                var lc = new LivingCriature(initialOxygen);
+                var lc = new LivingCreature(initialOxygen);
 
                 lc.consumeOxygen();
 
@@ -143,7 +150,7 @@ describe("LivingCriature", function () {
 
                 var initialOxygen = 0;
 
-                var lc = new LivingCriature(initialOxygen);
+                var lc = new LivingCreature(initialOxygen);
 
                 var actual   = lc.hasDied();
                 var expected = true;
@@ -155,7 +162,7 @@ describe("LivingCriature", function () {
 
                 var initialOxygen = 10;
 
-                var lc = new LivingCriature(initialOxygen);
+                var lc = new LivingCreature(initialOxygen);
 
                 var actual   = lc.hasDied();
                 var expected = false;
@@ -167,7 +174,7 @@ describe("LivingCriature", function () {
 
                 var initialOxygen = 1;
 
-                var lc = new LivingCriature(initialOxygen);
+                var lc = new LivingCreature(initialOxygen);
 
                 lc.consumeOxygen();
 
@@ -181,7 +188,7 @@ describe("LivingCriature", function () {
 
                 var initialOxygen = 2;
 
-                var lc = new LivingCriature(initialOxygen);
+                var lc = new LivingCreature(initialOxygen);
 
                 lc.consumeOxygen();
 
