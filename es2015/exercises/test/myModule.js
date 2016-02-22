@@ -61,19 +61,19 @@ describe("myModule", function () {
             assert(myModule.sum() === 0);
         });
 
-        it.skip('should use rest', function() {
+        it('should use rest', function() {
             assert(traverseAndFindNodeType(ast, 'RestElement'));
         });
     });
 
     describe('sumArray', function() {
-        it.skip('should sum arrays correctly', function() {
+        it('should sum arrays correctly', function() {
             assert(myModule.sumArray([0,1,2]) === 3);
             assert(myModule.sumArray([]) === 0);
             assert(myModule.sumArray() === 0);
         });
 
-        it.skip('should use spread', function() {
+        it('should use spread', function() {
             assert(traverseAndFindNodeType(ast, 'SpreadElement'));
         });
     });
