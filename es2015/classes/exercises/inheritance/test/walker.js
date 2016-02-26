@@ -5,12 +5,11 @@ import Walker from "../src/walker";
 
 describe("Walker", () => {
 
-    it.skip("must be a function", () => {
-
+    it("must be a function", () => {
         assert(typeof Walker === "function");
     });
 
-    it.skip("must throw an error if invoked directly without new", () => {
+    it("must throw an error if invoked directly without new", () => {
 
         assert.throws(() => {
 
@@ -21,7 +20,7 @@ describe("Walker", () => {
         });
     });
 
-    it.skip("must construct objects with prototypes: Walker.prototype", () => {
+    it("must construct objects with prototypes: Walker.prototype", () => {
 
         const initialOxygen = 2;
         const legs = 2;
@@ -95,7 +94,7 @@ describe("Walker", () => {
 
         describe(".getLegs(): number", () => {
 
-            it.skip("must return the number of legs provided in the initialization", () => {
+            it("must return the number of legs provided in the initialization", () => {
 
                 const initialOxygen = 2;
                 const legs = 2;

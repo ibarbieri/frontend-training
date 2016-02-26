@@ -7,7 +7,7 @@ describe("Walker", function () {
 
     assert(typeof Walker === "function");
 
-    it("must construct objects with prototypes: Walker.prototype", function () {
+    it.skip("must construct objects with prototypes: Walker.prototype", function () {
 
         var initialOxygen = 2;
         var legs = 2;
@@ -20,7 +20,7 @@ describe("Walker", function () {
         assert(actual === expected);
     });
 
-    it("must throw an error if the amount of legs provided is not a number", function () {
+    it.skip("must throw an error if the amount of legs provided is not a number", function () {
 
         assert.throws(function () {
 
@@ -31,7 +31,7 @@ describe("Walker", function () {
         });
     });
 
-    it("must throw an error if the amount of legs provided is zero", function () {
+    it.skip("must throw an error if the amount of legs provided is zero", function () {
 
         assert.throws(function () {
 
@@ -42,7 +42,7 @@ describe("Walker", function () {
         });
     });
 
-    it("must throw an error if the amount of legs provided is an odd number", function () {
+    it.skip("must throw an error if the amount of legs provided is an odd number", function () {
 
         assert.throws(function () {
 
@@ -53,7 +53,7 @@ describe("Walker", function () {
         });
     });
 
-    it("must not throw any error if the amount of legs provided is an even number greater than zero", function () {
+    it.skip("must not throw any error if the amount of legs provided is an even number greater than zero", function () {
 
         assert.doesNotThrow(function () {
 
@@ -68,7 +68,7 @@ describe("Walker", function () {
 
         describe(".getLegs(): number", function () {
 
-            it("must return the number of legs provided in the initialization", function () {
+            it.skip("must return the number of legs provided in the initialization", function () {
 
                 var initialOxygen = 2;
                 var legs = 2;
@@ -84,7 +84,7 @@ describe("Walker", function () {
 
         describe(".getSteps(): number", function () {
 
-            it("must return 0 if it walk has not yet been invoked", function () {
+            it.skip("must return 0 if it walk has not yet been invoked", function () {
 
                 var initialOxygen = 2;
                 var legs = 2;
@@ -100,7 +100,7 @@ describe("Walker", function () {
 
         describe(".walk()", function () {
 
-            it("must increment the amount of steps by 1", function () {
+            it.skip("must increment the amount of steps by 1", function () {
 
                 var initialOxygen = 2;
                 var legs = 2;

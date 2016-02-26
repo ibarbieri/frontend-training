@@ -4,27 +4,19 @@ var LivingCreature = require("../src/living-creature");
 
 describe("LivingCreature", function () {
 
-    it("must be a function", function () {
+    it.skip("must be a function", function () {
 
         assert(typeof LivingCreature === "function");
     });
 
-<<<<<<< HEAD:object-creation-patterns/exercises/inheritance/test/living-criature.js
-    it("must construct objects with prototypes: LivingCriature.prototype", function () {
-=======
     it.skip("must construct objects with prototypes: LivingCreature.prototype", function () {
->>>>>>> upstream/master:object-creation-patterns/exercises/inheritance/test/living-creature.js
 
         var initialOxygen = 0;
 
         var lc = new LivingCreature(initialOxygen);
 
         var actual   = Object.getPrototypeOf(lc);
-<<<<<<< HEAD:object-creation-patterns/exercises/inheritance/test/living-criature.js
         var expected = LivingCriature.prototype;
-=======
-        var expected = LivingCreature.prototype;
->>>>>>> upstream/master:object-creation-patterns/exercises/inheritance/test/living-creature.js
 
         assert(actual === expected);
     });

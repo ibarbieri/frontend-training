@@ -6,12 +6,12 @@ var WalkingCreature = require("../src/walking-creature");
 
 describe("WalkingCreature", function () {
 
-    it("must be a function", function () {
+    it.skip("must be a function", function () {
 
         assert(typeof WalkingCreature === "function");
     });
 
-    it("must construct objects with prototypes: WalkingCreature.prototype", function () {
+    it.skip("must construct objects with prototypes: WalkingCreature.prototype", function () {
 
         var initialOxygen = 2;
         var legs = 2;
@@ -24,7 +24,7 @@ describe("WalkingCreature", function () {
         assert(actual === expected);
     });
 
-    it("must construct objects that inherit from: LivingCreature", function () {
+    it.skip("must construct objects that inherit from: LivingCreature", function () {
 
         var initialOxygen = 2;
         var legs = 2;
